@@ -1,10 +1,24 @@
 import './App.css';
+import {useState} from 'react';
 import NavBar from './components/navbar';
 import image from './images/watermelon-leaf-anthracnose.jpg';
 import leafBlotch from './images/Necrotic_leaf_blotch1-WWT-A.jpg';
 import leafRot from './images/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.png';
+import TheosAPI from './components/theosapi';
 
 function App() {
+  const [img,setImg] = useState();
+  const url = "";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(img);
+    // const response = await fetch(url, {
+    //   method:"POST",
+    //   body: 
+    // })
+  }
   return (
     <div className="App">
       <NavBar/>
@@ -45,8 +59,13 @@ function App() {
                   </p>
                 </div>
               </div>
+
+              <h3>Upload your image here and find out what disease your plant has!</h3>
+            <TheosAPI/>
           </section>
+          
         </div>
+        
       </div>
     </div>
   );
