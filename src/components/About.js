@@ -1,7 +1,19 @@
-import React from 'react'
+import React from 'react';
+import  img from '../images/bestFriend.jpg';
 
 export default function About() {
   return (
-    <div>About</div>
+    <div className="aboutSection">
+      <h1>About the team!</h1>
+
+      <div className="aboutDiv">
+        <img src={img} alt=""/>
+        <p>Together, our team brings a wealth of diverse backgrounds and experience to the table, and we are excited to present our AI project to contribute to Farm Food Future Innovation.</p>
+
+        <h3>Check us out!</h3>
+            <p>Github: https://github.com/Mulcro/HackMerced-Project</p>
+        <h5>Made to win :)</h5>
+      </div>
+    </div>
   )
 }

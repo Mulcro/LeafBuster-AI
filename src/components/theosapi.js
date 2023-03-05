@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios'; 
 import ImageWithPoints from './ImageWithPoints';
+import gif from '../images/logoGif.gif';
+
 
 const URL = 'https://inf-0e4376c8-8b8c-44ab-94cb-42e18e303e49-no4xvrhsfq-uc.a.run.app/detect'; // copy and paste your URL here
 const FALLBACK_URL = ''; // copy and paste your fallback URL here
@@ -90,15 +92,23 @@ function TheosAPI() {
   return (
     <div style={{ padding: '20px' }}>
       <h1>Machine Learning Model</h1>
-      {detecting ? <h3>Detecting...</h3> : <div><label htmlFor='file-upload' style={{cursor:'pointer', display:'inline-block', padding:'8px 12px', borderRadius: '5px', border:'1px solid #ccc'}}>Click to select an image</label><input id='file-upload' type='file' accept='image/*' onChange={onFileSelected} style={{display:'none'}}/></div>}
+      {detecting ? <img src={gif}/> : <div><label htmlFor='file-upload' style={{cursor:'pointer', display:'inline-block', padding:'8px 12px', borderRadius: '5px', border:'1px solid #ccc'}}>Click to select an image</label><input id='file-upload' type='file' accept='image/*' onChange={onFileSelected} style={{display:'none'}}/></div>}
       
       {detected && 
-        <div> 
-          <h3></h3>
+        <div>
+            <h3>Your plant has: </h3>
+            <ul className="ulList">
+                {detections.map(detection => {
+                return(
+                    <li>
+                        {detection}
+                    </li>
+                )
+            })}</ul>
             <ImageWithPoints imageURL={imageURL} detectionObj={detectionObj}/>
         </div>
       }   
-
+        
       {/* We should send an array of all the coordinates so we can render multiple boxes on the same image otherwise now we'll just have multiples of the same image with different squares as the coordinates. If we send an array of the objects to the imagewithpoints func we can run a loop that goes for n (length of the array times) drawing boxes at each of the coordinates. */}
       {/* {detected && <ImageWithPoints imageURL={imageURL} points={[[100, 100]]} boxWidth={50} boxHeight={50} />}    */}
       

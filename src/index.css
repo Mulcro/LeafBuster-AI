@@ -1,11 +1,15 @@
 body {
   margin: 0;
+  background-color: beige;
   padding-bottom: 50px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Courier New', Courier, monospace;
+  width: auto;
 }
 
 code {
@@ -14,7 +18,8 @@ code {
 }
 
 .navbar {
-  background-color: #41b308; /* Set background color */
+  /*background-color: #c0f2a7; /* Set background color */
+  background: linear-gradient(to bottom, #ceffa4, #C7D9B7);;
   overflow: hidden; 
   display: flex;
   flex-direction: row;
@@ -24,7 +29,7 @@ code {
 
 .navbar .title{
   padding-left: 20px;
-  color: #ddd;
+  color: #ffffff;
 }
 
 .navbar .navItems {
@@ -34,7 +39,7 @@ code {
 .navbar .navItems a {
   float: left; /* Align the items to the left side */
   display: block; /* Display items as blocks */
-  color: #f2f2f2; /* Set text color */
+  color: #ffffff; /* Set text color */
   text-align: center; /* Center text */
   padding: 14px 16px; /* Add some padding to the items */
   text-decoration: none;
@@ -45,6 +50,14 @@ code {
 .navbar .navItems a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.sizingLogo{
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .colorBand{
@@ -63,6 +76,13 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.titleSection{
+  padding: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
 .introSection{
   margin-top: 30px;
   display: flex;
@@ -72,6 +92,7 @@ code {
 
 .introSection .introText{
   text-align: left;
+  line-height: 200%;
 }
 
 .introSection img{
@@ -86,7 +107,8 @@ code {
   justify-content: center;
 }
 .functionality{
-  width: 70%;
+  width: 60%;
+  line-height: 200%;
 }
 
 .two .parent{
@@ -101,4 +123,118 @@ code {
 .two .parent img{
   width: 200px;
   height: 100px;
+}
+
+/* Trivia page */
+
+.trvDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.triv1{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.triv1 div{
+  margin: 0 20px;
+}
+
+.trvDiv2{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  margin-top: 50px;
+}
+
+.trvDiv2 p{
+  margin-top: 20px;
+}
+
+.trvDiv3{
+margin-top: 40px;
+}
+
+.trvTitle{
+  background-color: #B7D9D1;
+  padding: 10px;
+  width: 30rem;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.trvDiv3 button{
+  margin: 30px;
+  border-radius: 3rem;
+  padding: 10px;
+  background-color: #B9FFDD;
+  font-weight: bold;
+}
+
+.trvDiv3 button:hover{
+  font-weight: bold;
+  border-radius: 3rem;
+  padding: 10px;
+  background-color: #caffe5;
+}
+
+.trvLaunch{
+  margin:30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutSection{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutDiv{
+  width: 70%;
+}
+
+.aboutDiv img {
+  height: 350px;
+  width: 500px;
+}
+.title img{
+  height:20;
+  width: 20;
+}
+.title span{
+  font-weight: bold;
+  font-size: larger;
+  color: rgb(62, 111, 13);
+}
+
+.dividingImg{
+  height: 250px;
+  width: 400px;
+}
+
+
+.ulList li{
+  list-style-type:none;
+}
+
+.logoSection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.logo{
+  height: 40px;
+  width: 40px;
 }

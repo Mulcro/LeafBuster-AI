@@ -18,7 +18,6 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/trivia' element={<Trivia/>}/>
         </Switch>
-        <Home/>
       </div>
     </Router>
   );
