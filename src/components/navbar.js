@@ -1,11 +1,13 @@
+import {Link} from 'react-router-dom';
+
 const NavBar = () => {
     return (
         <div className="navbar">
             <h2 className="title">Plant Disease Detector</h2>
             
             <ul className="navItems">
-                <li>Trivia</li>
-                <li>About</li>
+                <Link to="/trivia">Trivia</Link>
+                <Link to="/about">About</Link>
             </ul>
         </div>
     )
