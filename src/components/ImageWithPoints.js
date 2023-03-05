@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
-function drawPointsWithBox(context, points, boxWidth, boxHeight) {
+function drawPointsWithBox(context, name, points, boxWidth, boxHeight) {
+  console.log(name);
   context.fillStyle = 'transparent';
   context.strokeStyle = 'red';
   context.lineWidth = 2;
@@ -19,8 +20,9 @@ function drawPointsWithBox(context, points, boxWidth, boxHeight) {
   });
 }
 
-function ImageWithPoints({ imageURL, points, boxWidth, boxHeight }) {
+function ImageWithPoints({imageURL, detectionObj}) {
   const canvasRef = useRef(null);
+  // const size = detectionObjs.length;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -34,9 +36,18 @@ function ImageWithPoints({ imageURL, points, boxWidth, boxHeight }) {
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
       // Draw the points with boxes
-      drawPointsWithBox(context, points, boxWidth, boxHeight);
+      detectionObj.map((obj) => {
+        const points = [[obj.x,obj.y]]
+        drawPointsWithBox(context,obj.class, points, obj.width, obj.height);
+      })
+
+      // console.log(points); //Points is an [[x,y]] 
+      // console.log(boxWidth); //boxWidth is a raw value 
+      // console.log(boxHeight); //boxWidth is a raw value
+      // drawPointsWithBox(context, points, boxWidth, boxHeight);
     };
-  }, [imageURL, points, boxWidth, boxHeight]);
+  // }, [imageURL, points, boxWidth, boxHeight]);
+  },[]);
 
   return <canvas ref={canvasRef} />;
 }
