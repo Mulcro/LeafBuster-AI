@@ -22,7 +22,6 @@ function drawPointsWithBox(context, name, points, boxWidth, boxHeight) {
 
 function ImageWithPoints({imageURL, detectionObj}) {
   const canvasRef = useRef(null);
-  // const size = detectionObjs.length;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,22 +31,17 @@ function ImageWithPoints({imageURL, detectionObj}) {
     const image = new Image();
     image.src = imageURL; 
     image.onload = () => {
-      // Draw the image
-      context.drawImage(image, 0, 0, canvas.width, canvas.height);
-
+      canvas.width = image.width;
+      canvas.height = image.height;
+      context.drawImage(image, 0, 0);
       // Draw the points with boxes
       detectionObj.map((obj) => {
         const points = [[obj.x,obj.y]]
-        drawPointsWithBox(context,obj.class, points, obj.width, obj.height);
+        drawPointsWithBox(context, obj.class, points, obj.width, obj.height);
       })
-
-      // console.log(points); //Points is an [[x,y]] 
-      // console.log(boxWidth); //boxWidth is a raw value 
-      // console.log(boxHeight); //boxWidth is a raw value
-      // drawPointsWithBox(context, points, boxWidth, boxHeight);
     };
-  // }, [imageURL, points, boxWidth, boxHeight]);
-  },[]);
+    
+  });
 
   return <canvas ref={canvasRef} />;
 }
