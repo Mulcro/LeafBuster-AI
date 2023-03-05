@@ -31,7 +31,7 @@ code {
   padding-right: 20px;
 }
 /* Style the links inside the navbar */
-.navbar .navItems li {
+.navbar .navItems a {
   float: left; /* Align the items to the left side */
   display: block; /* Display items as blocks */
   color: #f2f2f2; /* Set text color */
@@ -42,7 +42,7 @@ code {
 }
 
 /* Change the color of the links when the mouse pointer is over them */
-.navbar .navItems li:hover {
+.navbar .navItems a:hover {
   background-color: #ddd;
   color: black;
 }
