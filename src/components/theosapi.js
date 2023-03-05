@@ -46,6 +46,7 @@ function TheosAPI() {
   const [detections, setDetections] = useState('');
   const [error, setError] = useState(''); 
   const [imageURL, setImageURL] = useState('');  
+  const [detectionObj, setDetectionObj] = useState();
 
   // const [x, setX] = useState(0); 
   // const [y, setY] = useState(0); 
@@ -68,7 +69,17 @@ function TheosAPI() {
       .then(detections => {
         setDetected(true);
         setDetecting(false); 
-        setDetections(detections.length > 0? `${detections.length} OBJECTS FOUND\n${detections.map((detection, index) => ` ${'_'.repeat(30)}\n|\n| ${index+1}. ${detection.class}\n|\n|${'‾'.repeat(30)}\n|  ‣ confidence: ${detection.confidence*100}%\n|  ‣ x: ${detection.x}\n|  ‣ y: ${detection.y}\n|  ‣ width: ${detection.width}\n|  ‣ height: ${detection.height}\n|${'text' in detection? '  ‣ text: ' + detection.text:''}\n ${'‾'.repeat(30)}\n`).join('')}`: 'No objects found.');
+        setDetectionObj(detections);
+        console.log(detectionObj);
+        const uniqueSet = new Set();
+        detections.map(detection => {
+            uniqueSet.add(detection.class)
+        });
+
+        const uniqueArr = Array.from(uniqueSet);
+        console.log(uniqueArr);
+
+        setDetections(uniqueArr);
       })
       .catch(error => {
         setError(error.message);
@@ -80,8 +91,27 @@ function TheosAPI() {
     <div style={{ padding: '20px' }}>
       <h1>Machine Learning Model</h1>
       {detecting ? <h3>Detecting...</h3> : <div><label htmlFor='file-upload' style={{cursor:'pointer', display:'inline-block', padding:'8px 12px', borderRadius: '5px', border:'1px solid #ccc'}}>Click to select an image</label><input id='file-upload' type='file' accept='image/*' onChange={onFileSelected} style={{display:'none'}}/></div>}
-      {detected && <h3><pre>{detections}</pre></h3>}   
-      {detected && <ImageWithPoints imageURL={imageURL} points={[[100, 100]]} boxWidth={50} boxHeight={50} />}   
+      
+      {detected && 
+        <div>
+            <h3>{detections.map(detection => {
+                return(
+                    <div>
+                        {detection}
+                    </div>
+                )
+            })}</h3>
+            <div>{detectionObj.map(obj => {
+                return(
+                    <ImageWithPoints imageURL={imageURL} points={[[obj.x,obj.y]]} boxWidth={obj.width} boxHeight={obj.height} />
+                )
+            })}</div>
+        </div>
+      }   
+
+      {/* We should send an array of all the coordinates so we can render multiple boxes on the same image otherwise now we'll just have multiples of the same image with different squares as the coordinates. If we send an array of the objects to the imagewithpoints func we can run a loop that goes for n (length of the array times) drawing boxes at each of the coordinates. */}
+      {/* {detected && <ImageWithPoints imageURL={imageURL} points={[[100, 100]]} boxWidth={50} boxHeight={50} />}    */}
+      
       {error && <h3 style={{color:'red'}}>{error}</h3>}
     </div>
   );
