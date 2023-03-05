@@ -4,7 +4,7 @@ import NavBar from './components/navbar';
 import image from './images/watermelon-leaf-anthracnose.jpg';
 import leafBlotch from './images/Necrotic_leaf_blotch1-WWT-A.jpg';
 import leafRot from './images/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.png';
-import TheosAPI from './components/theosapi';
+import TheosAPI from './components/theosapi'; 
 
 function App() {
   const [img,setImg] = useState();
@@ -33,7 +33,8 @@ function App() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores non illo expedita obcaecati, officia deserunt molestias laborum assumenda voluptatum dolore? Numquam, voluptatibus? Saepe adipisci accusamus iste eum eligendi voluptatem delectus!
               </p>
             </div>
-            <img src={image} alt="" />
+
+            <img src={image}/>
           </section>        </div>          
         <div className="colorBand"></div>
         <div className="colorBand2"></div>
@@ -53,7 +54,7 @@ function App() {
                   </p>
                 </div>
                 <div className="child2">
-                  <img src={leafBlotch} alt="" />
+                  <img src={leafBlotch} alt="" />  
                   <p className="childwtxt">
                     Leaf Blotch
                   </p>
@@ -61,7 +62,7 @@ function App() {
               </div>
 
               <h3>Upload your image here and find out what disease your plant has!</h3>
-            <TheosAPI/>
+            <TheosAPI/> 
           </section>
           
         </div>

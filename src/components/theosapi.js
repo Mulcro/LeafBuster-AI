@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'; 
+import ImageWithPoints from './ImageWithPoints';
 
 const URL = 'https://inf-0e4376c8-8b8c-44ab-94cb-42e18e303e49-no4xvrhsfq-uc.a.run.app/detect'; // copy and paste your URL here
 const FALLBACK_URL = ''; // copy and paste your fallback URL here
@@ -43,18 +44,30 @@ function TheosAPI() {
   const [detecting, setDetecting] = useState(false);
   const [detected, setDetected] = useState(false);
   const [detections, setDetections] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(''); 
+  const [imageURL, setImageURL] = useState('');  
+
+  // const [x, setX] = useState(0); 
+  // const [y, setY] = useState(0); 
+  // const [width, setWidth] = useState(0); 
+  // const [height, setHeight] = useState(0);
+
 
   function onFileSelected(event) {
-    const file = event.target.files[0];
+    const file = event.target.files[0];   
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+    setImageURL(reader.result); 
+    };
     setDetecting(true);
     setDetected(false);
     setDetections([]);
-    setError('');
+    setError(''); 
     detect({imageFile:file})
       .then(detections => {
         setDetected(true);
-        setDetecting(false);
+        setDetecting(false); 
         setDetections(detections.length > 0? `${detections.length} OBJECTS FOUND\n${detections.map((detection, index) => ` ${'_'.repeat(30)}\n|\n| ${index+1}. ${detection.class}\n|\n|${'‾'.repeat(30)}\n|  ‣ confidence: ${detection.confidence*100}%\n|  ‣ x: ${detection.x}\n|  ‣ y: ${detection.y}\n|  ‣ width: ${detection.width}\n|  ‣ height: ${detection.height}\n|${'text' in detection? '  ‣ text: ' + detection.text:''}\n ${'‾'.repeat(30)}\n`).join('')}`: 'No objects found.');
       })
       .catch(error => {
@@ -65,9 +78,10 @@ function TheosAPI() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Theos API</h1>
+      <h1>Machine Learning Model</h1>
       {detecting ? <h3>Detecting...</h3> : <div><label htmlFor='file-upload' style={{cursor:'pointer', display:'inline-block', padding:'8px 12px', borderRadius: '5px', border:'1px solid #ccc'}}>Click to select an image</label><input id='file-upload' type='file' accept='image/*' onChange={onFileSelected} style={{display:'none'}}/></div>}
-      {detected && <h3><pre>{detections}</pre></h3>}
+      {detected && <h3><pre>{detections}</pre></h3>}   
+      {detected && <ImageWithPoints imageURL={imageURL} points={[[100, 100]]} boxWidth={50} boxHeight={50} />}   
       {error && <h3 style={{color:'red'}}>{error}</h3>}
     </div>
   );
