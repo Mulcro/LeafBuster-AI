@@ -101,11 +101,7 @@ function TheosAPI() {
                     </div>
                 )
             })}</h3>
-            <div>{detectionObj.map(obj => {
-                return(
-                    <ImageWithPoints imageURL={imageURL} points={[[obj.x,obj.y]]} boxWidth={obj.width} boxHeight={obj.height} />
-                )
-            })}</div>
+            <ImageWithPoints imageURL={imageURL} detectionObj={detectionObj}/>
         </div>
       }   
 
