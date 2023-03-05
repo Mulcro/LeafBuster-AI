@@ -93,14 +93,8 @@ function TheosAPI() {
       {detecting ? <h3>Detecting...</h3> : <div><label htmlFor='file-upload' style={{cursor:'pointer', display:'inline-block', padding:'8px 12px', borderRadius: '5px', border:'1px solid #ccc'}}>Click to select an image</label><input id='file-upload' type='file' accept='image/*' onChange={onFileSelected} style={{display:'none'}}/></div>}
       
       {detected && 
-        <div>
-            <h3>{detections.map(detection => {
-                return(
-                    <div>
-                        {detection}
-                    </div>
-                )
-            })}</h3>
+        <div> 
+          <h3></h3>
             <ImageWithPoints imageURL={imageURL} detectionObj={detectionObj}/>
         </div>
       }   
