@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/LeafBuster-AI/static/css/main.61d0fff7.css",
+    "main.js": "/LeafBuster-AI/static/js/main.21c8b01d.js",
+    "static/media/logo.png": "/LeafBuster-AI/static/media/logo.105a884503ac7538604f.png",
+    "static/media/bestFriend.jpg": "/LeafBuster-AI/static/media/bestFriend.428238d7b5ff5064948c.jpg",
+    "static/media/1.png": "/LeafBuster-AI/static/media/1.be2d80451e509f69492d.png",
+    "static/media/Necrotic_leaf_blotch1-WWT-A.jpg": "/LeafBuster-AI/static/media/Necrotic_leaf_blotch1-WWT-A.d025abe4fe54d38d0e19.jpg",
+    "static/media/watermelon-leaf-anthracnose.jpg": "/LeafBuster-AI/static/media/watermelon-leaf-anthracnose.28d0a77ebc78e37295d9.jpg",
+    "static/media/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.png": "/LeafBuster-AI/static/media/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.74d8c44a5e4b85eb348a.png",
+    "static/media/logoGif.gif": "/LeafBuster-AI/static/media/logoGif.b3a6d46fae64992cf1e1.gif",
+    "static/media/quiz-night.gif": "/LeafBuster-AI/static/media/quiz-night.43008b8c0e56f17ccb31.gif",
+    "index.html": "/LeafBuster-AI/index.html",
+    "main.61d0fff7.css.map": "/LeafBuster-AI/static/css/main.61d0fff7.css.map",
+    "main.21c8b01d.js.map": "/LeafBuster-AI/static/js/main.21c8b01d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61d0fff7.css",
+    "static/js/main.21c8b01d.js"
+  ]
+}
