@@ -1,6 +1,8 @@
 # Leaf Buster AI - README
 
-Leaf Buster AI is a machine learning project developed during the Hack the Burgh VI hackathon. The goal of the project is to help farmers identify and classify diseases in their crops using computer vision and artificial intelligence.
+Leaf Buster AI is a machine learning project developed during the HackMerced VIII hackathon. 
+
+The goal of the project is to help farmers identify and classify diseases in their crops using computer vision and artificial intelligence.
 
 Through the utilization of image recognition techniques with machine learning, we were able to identify leaf blotch. To accomplish this, we employed a dataset obtained from Kaggle, consisting of images depicting both healthy leaves and leaves affected by leaf blotch. Our approach involved using machine learning algorithms to train an AI model to recognize the visual patterns associated with leaf blotch. The model was taught to differentiate between healthy leaves and leaves affected by leaf blotch based on features such as the color, shape of the spots, size, distribution of the lesions, and other characteristics. Upon completion of the training process, the trained model can be used to automatically detect leaf blotch. This can be achieved via a computer vision system that examines images of plant leaves captured by a camera and delivers a diagnosis of leaf blotch based on its analysis.
 
