@@ -17,6 +17,7 @@ function App() {
           <Route path='/home' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/trivia' element={<Trivia/>}/>
+          <Route path='*' element={<Home/>}/>
         </Switch>
       </div>
     </Router>
