@@ -1,6 +1,6 @@
 import React from 'react'
 import image from '../images/watermelon-leaf-anthracnose.jpg';
-import leafBlotch from '../images/Necrotic_leaf_blotch1-WWT-A.jpg';
+import leafBlotch from '../images/leafBlotch.jpg';
 import leafRot from '../images/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.png';
 import TheosAPI from './theosapi'; 
 import logo from '../images/logo.png';
@@ -14,7 +14,6 @@ export default function Home() {
             <h1> Leaf Buster AI</h1>
             <h4>Keep Your Apple Leaves Healthy</h4>
         </section>
-        {/* insert gif here */}
         <div className="one">
         <section className="introSection">
             <div className="introText">
