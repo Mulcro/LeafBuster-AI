@@ -17,9 +17,6 @@ const Popup = (props) => {
     //Import all images
     const images = importAll(require.context('../images/Trivia_Game/leafs', false, /\.(png|jpe?g|svg)$/));
 
-    useEffect(() => {
-        console.log(images);
-    },[]);
 
     //Trivia options
     const options = [
@@ -40,7 +37,7 @@ const Popup = (props) => {
         }
         setChecked1(false);
         setChecked2(false);
-    },[count]);
+    },[images,count]);
 
 
     //Check if checkbox is checked and Handle answer selection
@@ -61,6 +58,8 @@ const Popup = (props) => {
                 setChecked1(false);
                 setResponse(e.target.value);
                 canSubmit(true);
+                break;
+            default:
                 break;
         }
     }
