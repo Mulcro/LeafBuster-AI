@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "/LeafBuster-AI/static/css/main.61d0fff7.css",
-    "main.js": "/LeafBuster-AI/static/js/main.21c8b01d.js",
+    "main.css": "/LeafBuster-AI/static/css/main.fff2f22f.css",
+    "main.js": "/LeafBuster-AI/static/js/main.c28155f8.js",
     "static/media/logo.png": "/LeafBuster-AI/static/media/logo.105a884503ac7538604f.png",
     "static/media/bestFriend.jpg": "/LeafBuster-AI/static/media/bestFriend.428238d7b5ff5064948c.jpg",
     "static/media/1.png": "/LeafBuster-AI/static/media/1.be2d80451e509f69492d.png",
-    "static/media/Necrotic_leaf_blotch1-WWT-A.jpg": "/LeafBuster-AI/static/media/Necrotic_leaf_blotch1-WWT-A.d025abe4fe54d38d0e19.jpg",
+    "static/media/3.jpg": "/LeafBuster-AI/static/media/3.d025abe4fe54d38d0e19.jpg",
+    "static/media/leafBlotch.jpg": "/LeafBuster-AI/static/media/leafBlotch.d025abe4fe54d38d0e19.jpg",
+    "static/media/4.jpg": "/LeafBuster-AI/static/media/4.28d0a77ebc78e37295d9.jpg",
     "static/media/watermelon-leaf-anthracnose.jpg": "/LeafBuster-AI/static/media/watermelon-leaf-anthracnose.28d0a77ebc78e37295d9.jpg",
+    "static/media/1.jpg": "/LeafBuster-AI/static/media/1.b1d37921005ae29a9cb9.jpg",
+    "static/media/5.png": "/LeafBuster-AI/static/media/5.74d8c44a5e4b85eb348a.png",
     "static/media/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.png": "/LeafBuster-AI/static/media/PLPATH-FRU-07-Black-Rot-Frogeye-Apple-figure-2.74d8c44a5e4b85eb348a.png",
+    "static/media/2.jpg": "/LeafBuster-AI/static/media/2.641caf55ae1433e9d9b3.jpg",
     "static/media/logoGif.gif": "/LeafBuster-AI/static/media/logoGif.b3a6d46fae64992cf1e1.gif",
     "static/media/quiz-night.gif": "/LeafBuster-AI/static/media/quiz-night.43008b8c0e56f17ccb31.gif",
     "index.html": "/LeafBuster-AI/index.html",
-    "main.61d0fff7.css.map": "/LeafBuster-AI/static/css/main.61d0fff7.css.map",
-    "main.21c8b01d.js.map": "/LeafBuster-AI/static/js/main.21c8b01d.js.map"
+    "main.fff2f22f.css.map": "/LeafBuster-AI/static/css/main.fff2f22f.css.map",
+    "main.c28155f8.js.map": "/LeafBuster-AI/static/js/main.c28155f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.61d0fff7.css",
-    "static/js/main.21c8b01d.js"
+    "static/css/main.fff2f22f.css",
+    "static/js/main.c28155f8.js"
   ]
 }
