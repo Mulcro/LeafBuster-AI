@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import Answers from '../images/Trivia-Expert/answers';
+import Answers from '../images/Trivia_Game/answers';
 
 const importAll = (r) => {
     return r.keys().map(r);
@@ -15,7 +15,7 @@ const Popup = (props) => {
     const [submit, canSubmit] = useState(false);
 
     //Import all images
-    const images = importAll(require.context('../images/Trivia-Expert/leafs', false, /\.(png|jpe?g|svg)$/));
+    const images = importAll(require.context('../images/Trivia_Game/leafs', false, /\.(png|jpe?g|svg)$/));
 
     useEffect(() => {
         console.log(images);
